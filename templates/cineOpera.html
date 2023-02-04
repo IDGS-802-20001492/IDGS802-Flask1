@@ -1,0 +1,61 @@
+{% extends "layout_cinepolis.html"%}
+
+{% block content%}
+
+<div class="container">
+    <div class="row">
+        <div class="col-6">  
+            <form class="from-horizontal" name="form1" action="/res" method="post">
+                
+                <fieldset>
+                    <legend style="width: 70%;">Entradas</legend>
+                    <div class="form-group">
+                        <label for="nombre" class="control-label">Nombre</label>
+                            <input class="form-control" type="text" name="nombre" placeholder="Aquí va su nombre" value="">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="canComp" class="control-label">Cantidad de compradores:</label>
+                            <input class="form-control" type="number" name="canComp" placeholder="" value="">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Tarjeta Cineco</label><br>
+                        <input type="radio" id="SI" name="sel" value="si">
+                        <label for="suma">SI </label><br>
+                        <input type="radio" id="NO" name="sel" value="no">
+                        <label for="rest">NO </label><br>
+                    </div>
+                    <div class="form-group">
+                        <label for="canBol" class="control-label">Cantidad de boletas</label>                    
+                        <input class="form-control" type="number" name="canBol" placeholder="" value="">
+                        
+                    </div>
+                </fieldset>
+            </div>
+        
+        <div class="col-6">
+            <div>
+                <fieldset><legend style="width: 70%;">Salidas</legend><br>
+                    <label for="canBol" class="control-label">Valor a pagar</label>
+                        <input style="width: 90%;" class="form-control" type="number" name="canBol" placeholder="" value="{{res}}" readonly="">
+                </fieldset>
+            </div>
+        </div>
+    </div>
+
+        <div class="row">
+            <div class="col-4">
+                <fieldset>
+                    <legend style="width: 70%;">Acciones</legend><br>
+                    <button type="submit" class="btn btn-default btn-primary">
+                        Procesar
+                    </button>
+                    <button type="submit" class="btn btn-default btn-success">
+                        Salir
+                    </button>
+                </fieldset>
+            </div>
+        </div>
+    </div>
+</form>
+{%endblock%}
